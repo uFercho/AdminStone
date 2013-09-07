@@ -1,0 +1,34 @@
+Archivo actualizados 'JS'.
+	Se modifico 'function finish()'.
+	Desde la linea 2531
+	Se modificaron los parametros tanto del openwin como del ajax
+	Se agregaron 3 campos en el formulario de cxp para agregar (Forma de pago, Banco y Numero).
+	Se programo un evento (on.select) en el campo Forma de pago.
+	
+Archivo actualizados 'PHP'.
+	php/cxp/saveCxp.php
+	php/cxp/reciboDePago.php
+	php/cxp/reportCxp.php
+	
+Se agregaron 3 campos a la tabla 'tm_cxp_cuentas_por_pagar'
+
+	forma_pago  NVarChar(25) COLLATE utf8_general_ci NOT NULL,
+	banco       NVarChar(25) COLLATE utf8_general_ci,
+	num_item    NVarChar(25) COLLATE utf8_general_ci, 
+
+
+
+CREATE TABLE tm_cxp_cuentas_por_pagar (
+  id          Integer(11) NOT NULL AUTO_INCREMENT,
+  id_con      Integer(11) NOT NULL,
+  fecha       Date,
+  total_rel   Double,
+  total_cxc   Double,
+  num_factura NVarChar(25) COLLATE utf8_general_ci,
+  forma_pago  NVarChar(25) COLLATE utf8_general_ci NOT NULL,
+  banco       NVarChar(25) COLLATE utf8_general_ci,
+  num_item    NVarChar(25) COLLATE utf8_general_ci, 
+  PRIMARY KEY (
+      id
+  )
+) ENGINE=InnoDB DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
